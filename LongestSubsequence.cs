@@ -39,10 +39,17 @@ namespace Simple
 
 			var lst = subsequence(S, d); 
 
+			Console.WriteLine("Subsequences are: "); 
 			foreach(var x in lst) 
 			{ 
 				Console.WriteLine(x); 
 			} 
+
+			var longest = (from word in lst
+									   select word.Length).Max(); 
+
+			Console.WriteLine("Longest word length in D that is a subsequence of S: {0}", longest); 
+
 
 		} 
 		public static List<string> subsequence( string S, string dd) 
@@ -53,7 +60,6 @@ namespace Simple
 
 			int a = 0; 
 			int b = 0; 
-			
 
 			foreach(var str in D) // print all the words from D 
 			{ 
